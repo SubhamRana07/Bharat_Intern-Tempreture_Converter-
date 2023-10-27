@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+<style>
+body {
+font-family: sans-serif;
+color: #333;
+margin-top:12%;
+}
+input {
+    width: 58%;
+    height: 25px;
+    margin-bottom: 19px;
+    margin-left: 94px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+button {
+    width: 16%;
+    margin-left: 203px;
+    margin-bottom: 30px;
+    padding: 7px;
+    background: linear-gradient(122deg, #2bc4ff, #28ff00);
+    color: rgb(0 0 0);
+    border: 2px solid #141414;
+    border-radius: 30px;
+}
+#button:hover {
+    background:#8eecd2; /* Darker color on hover */
+}
+#result {
+font-size: 20px;
+margin-top: -20px;
+margin-left: 50px;
+}
+.container {
+width: 500px;
+margin-left: 30%;
+}
+.temperature-converter {
+    background: linear-gradient(122deg, #a8ff98,#b7ebff);
+    height: 280px;
+    padding: 7px;
+    box-shadow: rgba(0, 250,120, 0.863)0px 0px 350px;
+    border-radius: 50px;
+}
+.temperature-converter h1 {
+text-align: center;
+margin-bottom: 46px;
+border-radius: 20px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="temperature-converter">
+    <h1>Temperature Converter</h1>
+    
+    <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+    <input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit">
+    <button id="button" onclick="convert()">Convert</button>
+    <p id="result"></p>
+    </div>
+    </div>   
+</body>
+<script>
+function convert() {
+    var celsius = document.getElementById('celsius').value;
+    var fahrenheit = document.getElementById('fahrenheit').value;
+    
+    // Convert Celsius to Fahrenheit
+    if (celsius !== '') {
+    fahrenheit = (celsius * 9/5) + 32;
+    document.getElementById('fahrenheit').value = fahrenheit;
+    }    
+    // Convert Fahrenheit to Celsius
+    if (fahrenheit !== '') {
+    celsius = (fahrenheit - 32) * 5/9;
+    document.getElementById('celsius').value = celsius;
+    }
+    // Display the result
+    document.getElementById('result').innerHTML = 'The converted temperature is: ' + celsius + '°C / ' + fahrenheit + '°F';
+    }
+</script>
+</body>
+</html>
